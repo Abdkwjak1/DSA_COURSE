@@ -27,8 +27,8 @@ def fibonacci_huge_fast(n, m):
 def test_cases():
     import time
     import random
-    for n in range(30):
-        m = random.randint(1,20)
+    for n in range(50000,50000000,):
+        m = random.randint(2,30)
         t = time.perf_counter() * 1000
         sol1 = fibonacci_huge_naive(n,m)
         t1 = time.perf_counter() * 1000- t
@@ -38,12 +38,13 @@ def test_cases():
             print("OK!")
         else:
             print("WRONG!")
+            break
         
         print("Solution_1: ",sol1," Time: ", t1)
         print("Solution_2: ",sol2," Time: ", t2)
 
 
 if __name__ == '__main__':
-    n, m = map(int, input().split())
-    print(fibonacci_huge_fast(n, m))
-    # test_cases()
+    # n, m = map(int, input().split())
+    # print(fibonacci_huge_fast(n, m))
+    test_cases()

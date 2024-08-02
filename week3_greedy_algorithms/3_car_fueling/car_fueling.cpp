@@ -8,7 +8,31 @@ using std::max;
 
 int compute_min_refills(int dist, int tank, vector<int> & stops) {
     // write your code here
-    return -1;
+    int refills = 0;
+    int pre_stop = 0;
+    int re_tank = 0;
+    int re_dis = 0;
+
+    for (int i; i<sizeof(stops); i++ )
+    {
+        re_tank = tank - (stops[i] - pre_stop);
+        re_dis = dist -stops[i];
+
+        pre_stop = stops[i];
+
+        if (tank >= re_dis)
+            return refills;
+        else
+        {
+            if (re_tank < (stops[i+1] - stops[i]))
+                {
+                    if (tank < (stops[i+1] - stops[i]))
+                        return -1;
+                    refills += 1;
+                }       
+        }
+    }
+    return refills;
 }
 
 

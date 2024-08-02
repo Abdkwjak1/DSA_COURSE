@@ -1,8 +1,9 @@
 #include <iostream>
+#include<cmath>
 
 int get_change(int m) {
   //write your code here
-  return n;
+  return (std::floor(m/10) + std::floor((m%10)/5) + m%5);
 }
 
 int main() {
